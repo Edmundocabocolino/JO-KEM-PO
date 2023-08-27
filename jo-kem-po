@@ -1,47 +1,61 @@
 from random import randint
 from time import sleep
-print(' '*5, '\033[7:44mJOKEMPÓ\033[m')
-print('Vamos jogar jokempo')
-itens = ('pedra', 'papel', 'tesoura')
-computador = randint(0, 2)
-print('''Suas opções:
-[0] PEDRA
-[1] PAPEL
-[2]TESOURA''')
-jogador = int(input('Qual é a sua jogada? '))
-print('JO')
-sleep(1)
-print('KEM')
-sleep(1)
-print('PÓ!!')
-print('='*23)
-print('Computador jogou {}'.format(itens[computador]))
-print('Jogador jogou {}'.format(itens[jogador]))
-print('='*23)
-if computador == 0:# computador jogou pedra
-    if jogador == 0:
-        print('EMPATE')
-    elif jogador == 1:
-        print('jogador VENCE!!')
-    elif jogador == 2:
-        print('computador VENCE!!!')
-    else:
-        print(' JOGADA INVALIDA!')
-elif computador == 1:# computador jogou papel
-    if jogador == 0:
-        print('computador VENCE!!!')
-    elif jogador == 1:
-        print('EMPATE')
-    elif jogador == 2:
-        print(('jogador VENCE!!!'))
-    else:
-        print(' JOGADA INVALIDA!')
-elif computador == 2:#computador jogou tesoura
-    if jogador == 0:
-        print('jogador VENCE!!!')
-    elif jogador == 1:
-        print('computador VENCE!!!')
-    elif jogador == 2:
-        print('EMPATE')
-    else:
-        print(' JOGADA INVALIDA!')
+def titulo(a):
+    print('-'*19)
+    print(' '*5, '\033[34mJOKEMPÓ\033[m')
+    print('*'*19)
+    print('Vamos jogar jokempo')
+    print('-'*19)
+
+
+while True:
+    titulo(a=0)
+    itens = ('pedra', 'papel', 'tesoura')
+    computador = randint(0, 2)
+    print('''Suas opções:
+    [0] PEDRA
+    [1] PAPEL
+    [2]TESOURA''')
+    jogador = int(input('Qual é a sua jogada? '))
+    print('JO')
+    sleep(1)
+    print('KEM')
+    sleep(1)
+    print('PÓ!!')
+    print('='*23)
+    print('Computador jogou {}'.format(itens[computador]))
+    print('Jogador jogou {}'.format(itens[jogador]))
+    print('='*23)
+    if computador == 0:# computador jogou pedra
+        if jogador == 0:
+            print('EMPATE')
+        elif jogador == 1:
+            print('jogador VENCE!!')
+        elif jogador == 2:
+            print('computador VENCE!!!')
+        else:
+            print(' JOGADA INVALIDA!')
+    elif computador == 1:# computador jogou papel
+        if jogador == 0:
+            print('computador VENCE!!!')
+        elif jogador == 1:
+            print('EMPATE')
+        elif jogador == 2:
+            print(('jogador VENCE!!!'))
+        else:
+            print(' JOGADA INVALIDA!')
+    elif computador == 2:#computador jogou tesoura
+        if jogador == 0:
+            print('jogador VENCE!!!')
+        elif jogador == 1:
+            print('computador VENCE!!!')
+        elif jogador == 2:
+            print('EMPATE')
+        else:
+            print(' JOGADA INVALIDA!')
+    resp = ' '
+    while resp not in 'SN':
+        resp = str(input('Quer jogar novamente:[S/N] ')).upper()[0].strip()
+    if resp == 'N':
+        print('Otimo jogo,VOLTE SEMPRE')
+        break                   
